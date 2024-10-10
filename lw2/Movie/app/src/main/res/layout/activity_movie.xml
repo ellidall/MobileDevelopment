@@ -107,6 +107,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:text="@string/moviePageSubtitle"
                 tools:text="Описание" />
 
             <TextView

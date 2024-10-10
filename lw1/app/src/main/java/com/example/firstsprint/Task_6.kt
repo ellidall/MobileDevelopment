@@ -64,14 +64,14 @@ class StudentManager {
     fun printSortedByPoints() {
         val sortedStudents = students.sortedByDescending { it.points }
         for (student in sortedStudents) {
-            println("${student.name} (${student.age} лет) - ${student.points} балла")
+            println("<${student.id}> ${student.name} (${student.age} лет) - ${student.points} балла")
         }
     }
 
     fun printSortedByNames() {
         val sortedStudents = students.sortedBy { it.name }
         for (student in sortedStudents) {
-            println("${student.name} (${student.age} лет) - ${student.points} балла")
+            println("<${student.id}> ${student.name} (${student.age} лет) - ${student.points} балла")
         }
     }
 }

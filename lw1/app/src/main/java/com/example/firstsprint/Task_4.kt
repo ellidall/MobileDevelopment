@@ -20,7 +20,12 @@ class Translator {
     }
 
     fun remove(word: Word, context: Context, translate: Translate) {
-        dictionary[word]?.get(context)?.remove(translate)
+        val translations = dictionary[word]?.get(context)
+        translations?.remove(translate)
+
+        if (translations != null && translations.isEmpty()) {
+            dictionary[word]?.remove(context)
+        }
     }
 
     fun getTranslate(word: Word): ContextMap {
