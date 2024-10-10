@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Profile</string>
+    <string name="profile_image">avatar</string>
+    <string name="speciality">Специальность</string>
+    <string name="age">Возраст</string>
+    <string name="height">Рост</string>
+    <string name="about">О себе</string>
+    <string name="hobbies">Интересы</string>
+</resources>
