@@ -12,7 +12,6 @@ class MovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val movieTitle = intent.getStringExtra("MOVIE_TITLE") ?: "Название фильма"
         val movieRate = intent.getDoubleExtra("MOVIE_RATE", 0.0)
@@ -29,14 +28,4 @@ class MovieActivity : AppCompatActivity() {
             finish()
         }
     }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            android.R.id.home -> {
-//                finish()
-//                return true
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
 }

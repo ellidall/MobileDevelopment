@@ -16,6 +16,8 @@ class MovieCardDecoration (private val resources: Resources): ItemDecoration()
         state: RecyclerView.State
     ) {
         val position = parent.getChildAdapterPosition(view)
+        val itemCount = state.itemCount
+        val spanCount = 2
 
         if (position % 2 == 0) {
             outRect.left = 16.px()
@@ -26,6 +28,14 @@ class MovieCardDecoration (private val resources: Resources): ItemDecoration()
         }
 
         outRect.top = 14.px()
+
+        if (position < spanCount) {
+            outRect.top = 20.px()
+        }
+
+        if (position >= itemCount - spanCount) {
+            outRect.bottom = 32.px()
+        }
     }
 
     private fun Int.px(): Int {

@@ -11,7 +11,9 @@ import com.example.movie.databinding.MovieCardBinding
 
 class MovieCardViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
-class MovieListAdapter(private val context: Context) : RecyclerView.Adapter<MovieCardViewHolder>() {
+class MovieListAdapter(
+    private val onItemClick: (MovieItem) -> Unit
+) : RecyclerView.Adapter<MovieCardViewHolder>() {
     var movieList = listOf<MovieItem>()
 
     override fun getItemCount(): Int = movieList.count()
@@ -36,13 +38,7 @@ class MovieListAdapter(private val context: Context) : RecyclerView.Adapter<Movi
             .into(itemBinding.movieImage)
 
         itemBinding.cardView.setOnClickListener {
-            val intent = Intent(context, MovieActivity::class.java).apply {
-                putExtra("MOVIE_TITLE", movieCard.title)
-                putExtra("MOVIE_RATE", movieCard.rate)
-                putExtra("MOVIE_DESCRIPTION", movieCard.description)
-                putExtra("MOVIE_IMAGE_URL", movieCard.imageUrl)
-            }
-            context.startActivity(intent)
+            onItemClick(movieCard)
         }
     }
 }

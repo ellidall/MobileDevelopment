@@ -1,5 +1,6 @@
 package com.example.movie
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -7,14 +8,24 @@ import com.example.movie.databinding.ActivityMoviesListBinding
 
 class MoviesListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMoviesListBinding
-    private val adapter = MovieListAdapter(this)
+    private val adapter by lazy {
+        MovieListAdapter { movieItem ->
+            val intent = Intent(this, MovieActivity::class.java).apply {
+                putExtra("MOVIE_TITLE", movieItem.title)
+                putExtra("MOVIE_RATE", movieItem.rate)
+                putExtra("MOVIE_DESCRIPTION", movieItem.description)
+                putExtra("MOVIE_IMAGE_URL", movieItem.imageUrl)
+            }
+            startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMoviesListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.appBarTitle.text = "Фильмы"
+        binding.materialToolbar.title = "Фильмы"
         binding.listView.adapter = adapter
         binding.listView.addItemDecoration(MovieCardDecoration(resources))
         binding.listView.layoutManager = GridLayoutManager(this, 2)
