@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.databinding.FragmentFirstBinding
 
+const val NAME: String = "NAME"
+
 class FirstFragment : Fragment(R.layout.fragment_first) {
     private lateinit var binding: FragmentFirstBinding
 
@@ -18,7 +20,7 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             val surname = binding.surnameEditText.text.toString()
 
             val arguments = Bundle().apply {
-                putString("NAME", name)
+                putString(NAME, name)
                 putString("SURNAME", surname)
             }
 

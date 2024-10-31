@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upperBlock"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPanel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/expressionTextViewUpper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="end"
+            android:text="@string/expression"
+            android:textColor="@color/result"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            app:layout_constraintBottom_toTopOf="@+id/expressionTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/expressionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text=""
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultTextViewUpper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expressionTextViewUpper"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/resultTextViewUpper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="end"
+            android:text="@string/result"
+            android:textColor="@color/result"
+            android:fontFamily="@font/roboto"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expressionTextView"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultTextViewUpper"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upperBlock">
+
+        <!-- Первая строка -->
+        <Button
+            android:id="@+id/btn7"
+            style="@style/CalcButton"
+            android:text="@string/seven"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/CalcButton"
+            android:text="@string/eight"
+            app:layout_constraintStart_toEndOf="@id/btn7"
+            app:layout_constraintEnd_toStartOf="@+id/btn9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/CalcButton"
+            android:text="@string/nine"
+            app:layout_constraintStart_toEndOf="@id/btn8"
+            app:layout_constraintEnd_toStartOf="@+id/btnDivide"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            style="@style/CalcButton2"
+            android:text="@string/division"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Вторая строка -->
+        <Button
+            android:id="@+id/btn4"
+            style="@style/CalcButton"
+            android:text="@string/four"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn5"
+            app:layout_constraintTop_toBottomOf="@id/btn7" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/CalcButton"
+            android:text="@string/five"
+            app:layout_constraintStart_toEndOf="@id/btn4"
+            app:layout_constraintEnd_toStartOf="@+id/btn6"
+            app:layout_constraintTop_toBottomOf="@id/btn8" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/CalcButton"
+            android:text="@string/six"
+            app:layout_constraintStart_toEndOf="@id/btn5"
+            app:layout_constraintEnd_toStartOf="@+id/btnMultiply"
+            app:layout_constraintTop_toBottomOf="@id/btn9" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            style="@style/CalcButton2"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/multiplication"
+            app:layout_constraintStart_toEndOf="@id/btn6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDivide" />
+
+        <!-- Третья строка -->
+        <Button
+            android:id="@+id/btn1"
+            style="@style/CalcButton"
+            android:text="@string/one"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/btn4" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/CalcButton"
+            android:text="@string/two"
+            app:layout_constraintStart_toEndOf="@id/btn1"
+            app:layout_constraintEnd_toStartOf="@+id/btn3"
+            app:layout_constraintTop_toBottomOf="@id/btn5" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/CalcButton"
+            android:text="@string/three"
+            app:layout_constraintStart_toEndOf="@id/btn2"
+            app:layout_constraintEnd_toStartOf="@+id/btnSubtract"
+            app:layout_constraintTop_toBottomOf="@id/btn6" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            style="@style/CalcButton2"
+            android:text="@string/subtraction"
+            app:layout_constraintStart_toEndOf="@id/btn3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnMultiply" />
+
+        <!-- Четвертая строка -->
+        <Button
+            android:id="@+id/btn0"
+            style="@style/CalcButton"
+            android:text="@string/zero"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnDecimal"
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+        <Button
+            android:id="@+id/btnDecimal"
+            style="@style/CalcButton"
+            android:text="@string/comma"
+            app:layout_constraintStart_toEndOf="@id/btn0"
+            app:layout_constraintEnd_toStartOf="@+id/btnClear"
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
+
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/CalcButton2"
+            android:text="@string/backspace"
+            app:layout_constraintStart_toEndOf="@+id/btnDecimal"
+            app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+            app:layout_constraintTop_toBottomOf="@+id/btn3"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            style="@style/CalcButton2"
+            android:text="@string/addition"
+            app:layout_constraintStart_toEndOf="@+id/btnClear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSubtract"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

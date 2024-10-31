@@ -28,7 +28,7 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
             val birthDate = binding.birthDateTextView.text.toString()
 
             val bundle = Bundle().apply {
-                putString("NAME", name)
+                putString(NAME, name)
                 putString("SURNAME", surname)
                 putString("BIRTH_DATE", birthDate)
             }
