@@ -3,20 +3,25 @@ package com.example.calculator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
-import net.objecthunter.exp4j.ExpressionBuilder
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.calculator.databinding.ActivityCalcBinding
+import kotlinx.coroutines.flow.collectLatest
 
 class CalcActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityCalcBinding
-    private var expression = ""
-    private var expressionText = ""
+    private val viewModel: CalculatorViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCalcBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupUI()
+        observeState()
+    }
+
+    private fun setupUI() {
         val buttons = listOf(
             binding.btn0, binding.btn1, binding.btn2, binding.btn3, binding.btn4,
             binding.btn5, binding.btn6, binding.btn7, binding.btn8, binding.btn9,
@@ -26,51 +31,28 @@ class CalcActivity : AppCompatActivity() {
 
         buttons.forEach { button ->
             button.setOnClickListener {
-                appendToExpression((it as Button).text.toString())
+                viewModel.appendToExpression((it as Button).text.toString())
             }
         }
 
         binding.btnClear.setOnClickListener {
-            removeLastCharacter()
+            viewModel.removeLastCharacter()
         }
     }
 
-    private fun appendToExpression(value: String) {
-        val correctedValue = when (value) {
-            "×" -> "*"
-            "÷" -> "/"
-            else -> value
+    private fun observeState() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.state.collectLatest { state ->
+                updateUI(state)
+            }
         }
-        expression += correctedValue
-        expressionText += value
-        updateExpression()
     }
 
-    private fun removeLastCharacter() {
-        if (expression.isNotEmpty()) {
-            expression = expression.substring(0, expression.length - 1)
-            expressionText = expressionText.substring(0, expressionText.length - 1)
-        }
-        updateExpression()
-    }
-
-    private fun updateExpression() {
-        binding.expressionTextView.text = expressionText
-        calculateResult()
-    }
-
-    private fun calculateResult() {
-        try {
-            val expr = ExpressionBuilder(expression).build()
-            val result = expr.evaluate()
-
-            binding.expressionTextView.setTextColor(getColor(R.color.black))
-            binding.resultTextView.setTextColor(getColor(R.color.black))
-            binding.resultTextView.text = result.toString()
-        } catch (e: Exception) {
-            binding.expressionTextView.setTextColor(getColor(R.color.red))
-            binding.resultTextView.setTextColor(getColor(R.color.red))
-            binding.resultTextView.text = "Ошибка"
-        }
+    private fun updateUI(state: CalculatorState) {
+        binding.expressionTextView.text = state.displayExpression
+        binding.resultTextView.text = state.result
+        val textColor = if (state.isError) R.color.red else R.color.black
+        binding.expressionTextView.setTextColor(getColor(textColor))
+        binding.resultTextView.setTextColor(getColor(textColor))
     }
 }

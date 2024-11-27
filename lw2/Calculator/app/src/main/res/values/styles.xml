@@ -2,8 +2,8 @@
 <resources>
 
     <style name="CalcButton">
-        <item name="android:layout_width">77dp</item>
-        <item name="android:layout_height">77dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="android:background">@drawable/circular_button_background</item>
         <item name="android:textSize">24sp</item>
@@ -25,8 +25,8 @@
     </style>
 
     <style name="CalcButton2">
-        <item name="android:layout_width">77dp</item>
-        <item name="android:layout_height">77dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:layout_margin">8dp</item>
         <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">@font/roboto</item>
