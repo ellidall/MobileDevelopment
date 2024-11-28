@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CookieClicker</string>
+    <string name="nav_clicker">Clicker</string>
+    <string name="nav_store">Store</string>
+    <string name="img_cookie_cd">Cookie</string>
+    <string name="cookies_label">Печенья:</string>
+    <string name="per_second_label">В секунду:</string>
+    <string name="time_label">Время:</string>
+    <string name="average_speed_label">Средняя скорость:</string>
+</resources>
