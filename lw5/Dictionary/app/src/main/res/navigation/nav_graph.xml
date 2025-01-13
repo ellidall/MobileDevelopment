@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/pinCodeFragment">
+
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.example.dictionary.EditorFragment"
+        android:label="FragmentEditor" >
+        <action
+            android:id="@+id/action_fragmentEditor_to_fragmentDiary"
+            app:destination="@id/diaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="com.example.dictionary.DiaryFragment"
+        android:label="FragmentDiary" >
+        <action
+            android:id="@+id/action_fragmentDiary_to_fragmentEditor"
+            app:destination="@id/editorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pinCodeFragment"
+        android:name="com.example.dictionary.PinCodeFragment"
+        android:label="FragmentLogin" >
+        <action
+            android:id="@+id/action_fragmentPinCode_to_fragmentDiary"
+            app:destination="@id/diaryFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+
+    <string name="button_0_text">0</string>
+    <string name="button_1_text">1</string>
+    <string name="button_2_text">2</string>
+    <string name="button_3_text">3</string>
+    <string name="button_4_text">4</string>
+    <string name="button_5_text">5</string>
+    <string name="button_6_text">6</string>
+    <string name="button_7_text">7</string>
+    <string name="button_8_text">8</string>
+    <string name="button_9_text">9</string>
+    <string name="button_clear_all">C</string>
+
+    <string name="dot_cd">dot</string>
+    <string name="button_delete_one_cd">delete one</string>
+
+    <string name="image_cd">image</string>
+
+    <string name="no_journal_entries">Записи в дневнике отсутствуют</string>
+    <string name="create_entry">Создать запись</string>
+    <string name="toolbar_text">Дневник</string>
+    <string name="toolbar_editor_text">Редактор записи</string>
+
+    <string name="etTitle">Введите заголовок</string>
+    <string name="etDescription">Введите описание</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="PinButtonStyle">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+</resources>
