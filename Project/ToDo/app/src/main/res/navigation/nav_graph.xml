@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/todoFragment">
+
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.example.todo.ui.EditorFragment"
+        android:label="FragmentEditor" >
+        <action
+            android:id="@+id/action_fragmentEditor_to_fragmentTodo"
+            app:destination="@id/todoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="com.example.todo.ui.TodoFragment"
+        android:label="FragmentTodo" >
+        <action
+            android:id="@+id/action_fragmentTodo_to_fragmentEditor"
+            app:destination="@id/editorFragment" />
+    </fragment>
+</navigation>

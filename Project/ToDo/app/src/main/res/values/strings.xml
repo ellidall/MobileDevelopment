@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Todo</string>
+    <string name="save">Save</string>
+    <string name="title_hint">Title</string>
+    <string name="content_hint">Content</string>
+    <string name="empty_fields_message">Please fill in all fields</string>
+    <string name="add_entry">Add entry</string>
+    <string name="entry_content">Entry Content</string>
+    <string name="entry_date">Entry Date</string>
+    <string name="entry_title">Entry Title</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="content_preview_goes_here">Content preview goes here</string>
+    <string name="back_button">Back button</string>
+    <string name="redactor">Task editor</string>
+    <string name="save_button">Save button</string>
+    <string name="tittle">Task title</string>
+    <string name="description">Task description</string>
+    <string name="Todo_title">Todo list</string>
+    <string name="Empty">Todo list empty</string>
+    <string name="Add_task">Add task</string>
+    <string name="Choose_filter">Choose element from list</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="future">Next week</string>
+    <string name="Deadline">Choose deadline</string>
+    <string name="date_empty">Date not selected</string>
+    <string name="date_choosed">Choosed date: </string>
+    <string name="all_tasks">All tasks</string>
+    <string name="not_started">Not started</string>
+    <string name="in_progress">In progress</string>
+    <string name="done">Done</string>
+</resources>
