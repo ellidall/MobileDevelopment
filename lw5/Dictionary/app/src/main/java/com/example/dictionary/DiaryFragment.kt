@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -45,6 +46,10 @@ class DiaryFragment : Fragment(R.layout.fragment_diary) {
         binding.filterIcon.setOnClickListener {
             showDatePicker()
         }
+
+//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+//            requireActivity().finish()
+//        }
 
         lifecycleScope.launch {
             viewModel.filteredRecords.collect { filteredRecords ->

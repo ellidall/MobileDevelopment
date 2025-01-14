@@ -18,7 +18,7 @@ class EditorFragment : Fragment(R.layout.fragment_editor) {
         binding = FragmentEditorBinding.bind(view)
 
         binding.buttonBack.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentEditor_to_fragmentDiary)
+            findNavController().popBackStack()
         }
 
         if (arguments == null) {
@@ -48,7 +48,7 @@ class EditorFragment : Fragment(R.layout.fragment_editor) {
             createdAt
         )
 
-        findNavController().navigate(R.id.action_fragmentEditor_to_fragmentDiary)
+        findNavController().popBackStack()
     }
 
     private fun onCreateButtonClick() {
@@ -62,6 +62,6 @@ class EditorFragment : Fragment(R.layout.fragment_editor) {
             binding.editDescription.text.toString()
         )
 
-        findNavController().navigate(R.id.action_fragmentEditor_to_fragmentDiary)
+        findNavController().popBackStack()
     }
 }

@@ -1,11 +1,9 @@
-
-package com.example.dictionary.viewmodel
+package com.example.dictionary
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.dictionary.SettingsStorage
 import kotlinx.coroutines.launch
 
 enum class State {
@@ -20,11 +18,11 @@ data class LoginState(
     val isError: Boolean = false
 )
 
-class LoginViewModel(private val settingStorage: SettingsStorage) : ViewModel() {
+class PinCodeViewModel(private val settingStorage: SettingsStorage) : ViewModel() {
     private val _state = MutableStateFlow(LoginState(State.CREATE_PIN))
     val state = _state.asStateFlow()
 
-    var actualPinCode: String? = null
+    private var actualPinCode: String? = null
         private set
 
     fun appendToPinCode(value: String) {

@@ -12,28 +12,24 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.dictionary.databinding.FragmentPinCodeBinding
-import com.example.dictionary.viewmodel.LoginState
-import com.example.dictionary.viewmodel.LoginViewModel
-import com.example.dictionary.viewmodel.State
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class PinCodeViewModelFactory(private val settingStorage: SettingsStorage) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(PinCodeViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return LoginViewModel(settingStorage) as T
+            return PinCodeViewModel(settingStorage) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
 
 class PinCodeFragment : Fragment(R.layout.fragment_pin_code) {
-
     private lateinit var binding: FragmentPinCodeBinding
 
-    private val viewModel: LoginViewModel by activityViewModels {
+    private val viewModel: PinCodeViewModel by activityViewModels {
         PinCodeViewModelFactory(SettingsStorage(requireContext()))
     }
 
