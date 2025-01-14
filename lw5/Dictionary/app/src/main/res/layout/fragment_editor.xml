@@ -37,9 +37,9 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/image_cd"
-            android:src="@drawable/ic_done_24"
-            android:layout_marginEnd="16dp"/>
+            android:src="@drawable/ic_done_24" />
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
@@ -47,8 +47,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@android:color/transparent"
+        android:autofillHints="@string/etTitle"
         android:hint="@string/etTitle"
-        android:inputType="textCapWords"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:minLines="1"
         android:textSize="18sp" />
 
     <EditText
@@ -58,14 +62,12 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
+        android:autofillHints="@string/etDescription"
+        android:background="@android:color/transparent"
         android:gravity="top"
         android:hint="@string/etDescription"
         android:inputType="textMultiLine"
         android:minLines="1"
-        android:autofillHints="@string/etDescription"
-        android:maxLines="5"
-        android:scrollbars="vertical"
-        android:overScrollMode="ifContentScrolls"
         android:textSize="16sp" />
 
 </LinearLayout>

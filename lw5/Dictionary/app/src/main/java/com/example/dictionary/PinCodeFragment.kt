@@ -29,8 +29,12 @@ class PinCodeViewModelFactory(private val settingStorage: SettingsStorage) : Vie
 class PinCodeFragment : Fragment(R.layout.fragment_pin_code) {
     private lateinit var binding: FragmentPinCodeBinding
 
+    private val settingsStorage: SettingsStorage by lazy {
+        SettingsStorage.getInstance(requireContext())
+    }
+
     private val viewModel: PinCodeViewModel by activityViewModels {
-        PinCodeViewModelFactory(SettingsStorage(requireContext()))
+        PinCodeViewModelFactory(settingsStorage)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
