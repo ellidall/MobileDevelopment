@@ -5,19 +5,24 @@
     app:startDestination="@id/todoFragment">
 
     <fragment
-        android:id="@+id/editorFragment"
-        android:name="com.example.todo.ui.EditorFragment"
-        android:label="FragmentEditor" >
-        <action
-            android:id="@+id/action_fragmentEditor_to_fragmentTodo"
-            app:destination="@id/todoFragment" />
+        android:id="@+id/createRecordFragment"
+        android:name="com.example.todo.ui.CreateRecordFragment"
+        android:label="FragmentCreateRecord" >
+    </fragment>
+    <fragment
+        android:id="@+id/createCategoryFragment"
+        android:name="com.example.todo.ui.CreateCategoryFragment"
+        android:label="FragmentCreateCategory" >
     </fragment>
     <fragment
         android:id="@+id/todoFragment"
         android:name="com.example.todo.ui.TodoFragment"
         android:label="FragmentTodo" >
         <action
-            android:id="@+id/action_fragmentTodo_to_fragmentEditor"
-            app:destination="@id/editorFragment" />
+            android:id="@+id/action_fragmentTodo_to_fragmentCreateRecord"
+            app:destination="@id/createRecordFragment" />
+        <action
+            android:id="@+id/action_fragmentTodo_to_fragmentCreateCategory"
+            app:destination="@id/createCategoryFragment" />
     </fragment>
 </navigation>

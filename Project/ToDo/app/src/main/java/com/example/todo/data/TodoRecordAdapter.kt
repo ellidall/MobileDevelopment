@@ -1,3 +1,5 @@
+package com.example.todo.data
+
 import android.os.Build
 
 import android.os.Bundle
@@ -9,14 +11,12 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo.R
-import com.example.todo.data.TodoItem
-import com.example.todo.data.TodoRecord
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 class TodoAdapter(
-    private val gotoEditorFn: (arguments: Bundle) -> Unit,
+    private val gotoEditorFn: (todoRecord: TodoRecord ) -> Unit,
     private val deleteTodoRecord: (todoRecord: TodoRecord) -> Unit,
     private val localState: String
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -67,8 +67,8 @@ class TodoAdapter(
     }
 
     inner class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val titleTextView: TextView = view.findViewById(R.id.record_title)
-        private val contentTextView: TextView = view.findViewById(R.id.record_content)
+        private val titleTextView: TextView = view.findViewById(R.id.recordTitle)
+        private val contentTextView: TextView = view.findViewById(R.id.recordContent)
         private val stateTextView: TextView = view.findViewById(R.id.record_state)
         private val dateTextView: TextView = view.findViewById(R.id.record_date)
         private val deleteButton: ImageButton = view.findViewById(R.id.record_delete_button)
@@ -94,6 +94,10 @@ class TodoAdapter(
             val formattedDate = formatter.format(Instant.ofEpochMilli(deadline))
 
             dateTextView.text = formattedDate
+
+            itemView.setOnClickListener {
+                gotoEditorFn(todoRecord)
+            }
 
             deleteButton.setOnClickListener {
                 deleteTodoRecord(todoRecord)

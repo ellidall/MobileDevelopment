@@ -2,9 +2,19 @@ package com.example.todo.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(
+    foreignKeys = [
+        ForeignKey(
+            entity = Category::class,
+            parentColumns = ["name"],
+            childColumns = ["categoryName"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
 data class TodoRecord(
     @PrimaryKey
     val uid: String,
@@ -20,4 +30,7 @@ data class TodoRecord(
 
     @ColumnInfo(name = "status")
     val status: String,
+
+    @ColumnInfo(name = "categoryName")
+    val categoryName: String? = null
 )

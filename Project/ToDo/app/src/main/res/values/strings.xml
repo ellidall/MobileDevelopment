@@ -13,8 +13,10 @@
     <string name="content_preview_goes_here">Content preview goes here</string>
     <string name="back_button">Back button</string>
     <string name="redactor">Task editor</string>
+    <string name="category_redactor">Category editor</string>
     <string name="save_button">Save button</string>
     <string name="tittle">Task title</string>
+    <string name="category_title_hint">Category title</string>
     <string name="description">Task description</string>
     <string name="Todo_title">Todo list</string>
     <string name="Empty">Todo list empty</string>
@@ -24,9 +26,12 @@
     <string name="future">Next week</string>
     <string name="Deadline">Choose deadline</string>
     <string name="date_empty">Date not selected</string>
-    <string name="date_choosed">Choosed date: </string>
+    <string name="date_chosen">Chosen date: </string>
     <string name="all_tasks">All tasks</string>
     <string name="not_started">Not started</string>
     <string name="in_progress">In progress</string>
     <string name="done">Done</string>
+    <string name="all_categories">All</string>
+    <string name="toast_title_cannot_be_empty">Title must not be empty</string>
+    <string name="toast_this_category_was_created_earlier">Category with this title was created earlier</string>
 </resources>

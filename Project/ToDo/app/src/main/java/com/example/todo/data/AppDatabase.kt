@@ -9,12 +9,14 @@ import androidx.room.TypeConverters
 @Database(
     entities = [
         TodoRecord::class,
+        Category::class,
     ],
     version = 1,
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun todoRecordDao(): TodoRecordDao
+    abstract fun categoryDao(): CategoryDao
 
     companion object {
         @Volatile

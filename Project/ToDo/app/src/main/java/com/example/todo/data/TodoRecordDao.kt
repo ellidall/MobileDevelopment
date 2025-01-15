@@ -21,10 +21,6 @@ interface TodoRecordDao {
     @Update
     suspend fun updateAll(vararg todoRecord: TodoRecord)
 
-    @Query("SELECT * FROM todorecord " +
-            "WHERE title LIKE :title LIMIT 1")
-    suspend fun findByTitle(title: String): TodoRecord?
-
     @Delete
     suspend fun delete(record: TodoRecord)
 }

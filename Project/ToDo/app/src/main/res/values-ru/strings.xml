@@ -14,8 +14,10 @@
     <string name="content_preview_goes_here">Предварительный просмотр контента здесь</string>
     <string name="back_button">Назад</string>
     <string name="redactor">Редактор</string>
+    <string name="category_redactor">Редактор</string>
     <string name="save_button">Сохранить</string>
     <string name="tittle">Название задачи</string>
+    <string name="category_title_hint">Название категории</string>
     <string name="description">Описание задачи</string>
     <string name="Todo_title">Список задач</string>
     <string name="Empty">Список задач пуст</string>
@@ -25,9 +27,12 @@
     <string name="future">На следующей неделе</string>
     <string name="Deadline">Выберите конечный срок задачи</string>
     <string name="date_empty">Дата не выбрана</string>
-    <string name="date_choosed">Выбранная дата: </string>
+    <string name="date_chosen">Выбранная дата: </string>
     <string name="all_tasks">Все задачи</string>
     <string name="not_started">Не начато</string>
     <string name="in_progress">В процессе</string>
     <string name="done">Готово</string>
+    <string name="all_categories">Все</string>
+    <string name="toast_title_cannot_be_empty">Название не должно быть пустым</string>
+    <string name="toast_this_category_was_created_earlier">Такая категория уже есть</string>
 </resources>
